@@ -1,0 +1,7 @@
+{
+  "name": "crud-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
