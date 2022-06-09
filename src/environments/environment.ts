@@ -3,7 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  dataResponseBack: [
+    {
+      id: 1,
+      name: 'Juan',
+      username: 'juanAdmin',
+      password: '123456',
+      role: 'admin',
+      avatar: 'https://randomuser.me/api/portraits/men/80.jpg',
+    },
+    {
+      id: 2,
+      name: 'Pedro',
+      username: 'pedroUser',
+      password: '123456',
+      role: 'user',
+      avatar: 'https://randomuser.me/api/portraits/men/82.jpg',
+    },
+  ],
 };
 
 /*

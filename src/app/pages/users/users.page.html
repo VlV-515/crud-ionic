@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>List of users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row
+      *ngFor="let user of dataUsers"
+      class="ion-align-items-center ion-justify-content-center"
+    >
+      <ion-col size="2">
+        <div>
+          <ion-avatar>
+            <img [src]="user.avatar" />
+          </ion-avatar>
+        </div>
+      </ion-col>
+      <ion-col offset="2" class="ion-text-capitalize ion-text-wrap">
+        <ion-label class="ion-margin-end">{{user.name}}</ion-label>
+        <br />
+        <ion-label>Role: {{user.role}}</ion-label>
+      </ion-col>
+      <ion-col size="2">
+        <div>
+          <ion-button color="danger">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-item-divider class='ion-margin-bottom'></ion-item-divider>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
