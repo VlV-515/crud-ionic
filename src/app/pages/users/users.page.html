@@ -15,19 +15,23 @@
       *ngFor="let user of dataUsers"
       class="ion-align-items-center ion-justify-content-center"
     >
-      <ion-col size="2">
+      <ion-col size="2" offsetMd="3" pushMd="1" class="ion-text-center">
         <div>
           <ion-avatar>
             <img [src]="user.avatar" />
           </ion-avatar>
         </div>
       </ion-col>
-      <ion-col offset="2" class="ion-text-capitalize ion-text-wrap">
+      <ion-col
+        offset="2"
+        offsetMd="1"
+        class="ion-text-capitalize ion-text-wrap"
+      >
         <ion-label class="ion-margin-end">{{user.name}}</ion-label>
         <br />
         <ion-label>Role: {{user.role}}</ion-label>
       </ion-col>
-      <ion-col size="3">
+      <ion-col size="3" sizeMd="2" pullMd="2">
         <ion-buttons>
           <ion-button color="warning" (click)="btnShowUser(user.id)">
             <ion-icon slot="icon-only" name="eye"></ion-icon>

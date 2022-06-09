@@ -14,9 +14,9 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <ion-col>
-        <ion-list>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="12" siz sizeMd="6" sizeLg="4" sizeXl="3">
+        <ion-list class="ion-padding ion-margin">
           <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
             <ion-item *ngIf="!isNewUser">
               <ion-label position="floating">ID</ion-label>
