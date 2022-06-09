@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="isNewUser">
+      <ion-back-button defaultHref="/users"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{isNewUser ? 'New' : 'Update'}} user</ion-title>
+    <ion-buttons slot="end" *ngIf="!isNewUser">
+      <ion-button color="danger" [routerLink]="['/user-detail', dataUser.id]">
+        Cancel
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <form [formGroup]="formUser" (ngSubmit)="onSubmit()">
+            <ion-item *ngIf="!isNewUser">
+              <ion-label position="floating">ID</ion-label>
+              <ion-input
+                type="number"
+                formControlName="id"
+                placeholder="ID"
+                [disabled]="!isNewUser"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label type="text" position="floating">Name</ion-label>
+              <ion-input
+                required
+                formControlName="name"
+                placeholder="Name"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Username</ion-label>
+              <ion-input
+                required
+                type="text"
+                formControlName="username"
+                placeholder="Username"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input
+                required
+                type="password"
+                formControlName="password"
+                placeholder="Password"
+              ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Role</ion-label>
+              <ion-select required formControlName="role" placeholder="Select">
+                <ion-select-option value="admin">Admin</ion-select-option>
+                <ion-select-option value="user">User</ion-select-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">URL avatar</ion-label>
+              <ion-input
+                required
+                type="text"
+                formControlName="avatar"
+                placeholder="Avatar"
+              ></ion-input>
+            </ion-item>
+            <ion-button
+              type="submit"
+              expand="block"
+              [disabled]="formUser.invalid"
+              color="primary"
+              class="ion-margin-top"
+            >
+              {{isNewUser ? 'Create new user' : 'Update user'}}
+            </ion-button>
+          </form>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

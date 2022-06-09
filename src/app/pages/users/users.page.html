@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="end">
-      <ion-button (click)='btnInfoSistema()'>
+      <ion-button (click)="btnInfoSistema()">
         <ion-icon slot="icon-only" name="help"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -37,11 +37,11 @@
           </ion-button>
         </ion-buttons>
       </ion-col>
-      <ion-item-divider class="ion-margin-bottom"></ion-item-divider>
+      <ion-item-divider></ion-item-divider>
     </ion-row>
   </ion-grid>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="success">
+    <ion-fab-button color="success" [routerLink]="['/form-user/new']">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

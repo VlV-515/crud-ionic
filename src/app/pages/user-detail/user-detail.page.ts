@@ -61,7 +61,9 @@ export class UserDetailPage implements OnInit {
     await actionSheet.present();
   }
 
-  private updateUser(): void {}
+  private updateUser(): void {
+    this.router.navigate(['/form-user', this.dataUser.id]);
+  }
   private async optionDeleteUser(): Promise<void> {
     const alert = await this.alertController.create({
       header: `Delete ${this.dataUser.name}`,
@@ -89,7 +91,9 @@ export class UserDetailPage implements OnInit {
           this.router.navigate(['/users']);
         }
       },
-      (error) => { console.log(error); }
+      (error) => {
+        console.log(error);
+      }
     );
   }
 }

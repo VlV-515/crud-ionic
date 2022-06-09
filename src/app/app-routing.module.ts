@@ -14,7 +14,22 @@ const routes: Routes = [
   },
   {
     path: 'user-detail/:id',
-    loadChildren: () => import('./pages/user-detail/user-detail.module').then( m => m.UserDetailPageModule)
+    loadChildren: () =>
+      import('./pages/user-detail/user-detail.module').then(
+        (m) => m.UserDetailPageModule
+      ),
+  },
+  {
+    path: 'form-user/:id',
+    loadChildren: () =>
+      import('./pages/form-user/form-user.module').then(
+        (m) => m.FormUserPageModule
+      ),
+  },
+  {
+    path: '**',
+    redirectTo: 'users',
+    pathMatch: 'full',
   },
 ];
 

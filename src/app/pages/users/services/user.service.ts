@@ -24,6 +24,7 @@ export class UserService {
   }
 
   addOne(data: UserInterface): Observable<UserResponseInterface> {
+    data.id = environment.dataResponseBack.length + 1;
     environment.dataResponseBack.push(data);
     const msgResponse = { status: 200, msg: 'ok' };
     return of(msgResponse);
