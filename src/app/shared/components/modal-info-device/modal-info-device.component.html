@@ -1,0 +1,86 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Info Device</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h2>Android</h2>
+        <p>
+          <ion-icon
+            name="logo-android"
+            slot="start"
+            class="ion-margin-end"
+          ></ion-icon>
+          <span>{{ data.isAndroid ? "Yes" : "No" }}</span>
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>Ios</h2>
+        <p>
+          <ion-icon
+            name="logo-apple"
+            slot="start"
+            class="ion-margin-end"
+          ></ion-icon>
+          <span>{{ data.isIos ? "Yes" : "No" }}</span>
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>Tablet</h2>
+        <p>
+          <ion-icon
+            name="tablet-portrait"
+            slot="start"
+            class="ion-margin-end"
+          ></ion-icon>
+          <span>{{ data.isTablet ? "Yes" : "No" }}</span>
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>Mobile</h2>
+        <p>
+          <ion-icon
+            name="phone-portrait"
+            slot="start"
+            class="ion-margin-end"
+          ></ion-icon>
+          <span>{{ data.isMobile ? "Yes" : "No" }}</span>
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>Web Mobile</h2>
+        <p>
+          <ion-icon name="globe" slot="start" class="ion-margin-end"></ion-icon>
+          <span>{{ data.isMobieWeb ? "Yes" : "No" }}</span>
+        </p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>Desktop</h2>
+        <p>
+          <ion-icon
+            name="desktop"
+            slot="start"
+            class="ion-margin-end"
+          ></ion-icon>
+          <span>{{ data.isDesktop ? "Yes" : "No" }}</span>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

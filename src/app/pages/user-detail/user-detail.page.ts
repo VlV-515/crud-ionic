@@ -38,7 +38,6 @@ export class UserDetailPage implements OnInit {
       buttons: [
         {
           text: 'Update',
-          role: 'destructive',
           icon: 'create',
           handler: () => {
             this.updateUser();
@@ -90,8 +89,7 @@ export class UserDetailPage implements OnInit {
           this.router.navigate(['/users']);
         }
       },
-      (error) => {
-      }
+      (error) => { console.log(error); }
     );
   }
 }

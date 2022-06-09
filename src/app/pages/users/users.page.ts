@@ -1,8 +1,11 @@
+import { ModalTypeDeviceComponent } from '../../shared/components/modal-info-device/modal-info-device.component';
+import { DeviceDetectionService } from './../../shared/services/device-detection.service';
 import { AlertController } from '@ionic/angular';
 import { UserInterface } from './interfaces/user.model';
 import { UserService } from './services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-users',
@@ -11,9 +14,12 @@ import { Router } from '@angular/router';
 })
 export class UsersPage implements OnInit {
   dataUsers: UserInterface[] = [];
+
   constructor(
     private readonly userSvc: UserService,
+    private readonly deviceDetectionSvc: DeviceDetectionService,
     private readonly alertController: AlertController,
+    private readonly modalController: ModalController,
     private readonly router: Router
   ) {}
 
@@ -56,6 +62,14 @@ export class UsersPage implements OnInit {
   }
   public btnShowUser(id: number): void {
     this.router.navigate(['/user-detail', id]);
+  }
+  public async btnInfoSistema(): Promise<void> {
+    const obj = this.deviceDetectionSvc.getAllVerifications();
+    const modal = await this.modalController.create({
+      component: ModalTypeDeviceComponent,
+      componentProps: { data: obj },
+    });
+    return await modal.present();
   }
 
   private refreshData(): void {
