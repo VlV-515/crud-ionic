@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/users"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize"
+      >{{dataUser.name}} details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-grid>
+    <ion-card>
+      <div class="ion-text-center ion-margin-top">
+        <img [src]="dataUser.avatar" />
+      </div>
+      <ion-card-header>
+        <ion-card-subtitle class="ion-text-capitalize"
+          >{{dataUser.role}}
+        </ion-card-subtitle>
+        <ion-card-title class="ion-text-capitalize"
+          >{{dataUser.name}}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-label>User: {{dataUser.username}}</ion-label>
+        <br />
+        <ion-label>Pass: {{dataUser.password}}</ion-label>
+        <ion-button
+          class="ion-margin-top"
+          expand="full"
+          color="tertiary"
+          (click)="userActions()"
+        >
+          Actions
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+</ion-content>

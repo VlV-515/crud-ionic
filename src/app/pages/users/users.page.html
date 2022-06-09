@@ -22,18 +22,21 @@
         <br />
         <ion-label>Role: {{user.role}}</ion-label>
       </ion-col>
-      <ion-col size="2">
-        <div>
-          <ion-button color="danger">
+      <ion-col size="3">
+        <ion-buttons>
+          <ion-button color="warning" (click)="btnShowUser(user.id)">
+            <ion-icon name="eye"></ion-icon>
+          </ion-button>
+          <ion-button color="danger" (click)="btnDeleteUser(user)">
             <ion-icon name="trash"></ion-icon>
           </ion-button>
-        </div>
+        </ion-buttons>
       </ion-col>
-      <ion-item-divider class='ion-margin-bottom'></ion-item-divider>
+      <ion-item-divider class="ion-margin-bottom"></ion-item-divider>
     </ion-row>
   </ion-grid>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
+    <ion-fab-button color="success">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
