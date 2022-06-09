@@ -1,4 +1,4 @@
-import { ModalTypeDeviceComponent } from '../../shared/components/modal-info-device/modal-info-device.component';
+import { ModalInfoDeviceComponent } from '../../shared/components/modal-info-device/modal-info-device.component';
 import { DeviceDetectionService } from './../../shared/services/device-detection.service';
 import { AlertController } from '@ionic/angular';
 import { UserInterface } from './interfaces/user.model';
@@ -66,7 +66,7 @@ export class UsersPage implements OnInit {
   public async btnInfoSistema(): Promise<void> {
     const obj = this.deviceDetectionSvc.getAllVerifications();
     const modal = await this.modalController.create({
-      component: ModalTypeDeviceComponent,
+      component: ModalInfoDeviceComponent,
       componentProps: { data: obj },
     });
     return await modal.present();

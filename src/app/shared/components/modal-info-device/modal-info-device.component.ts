@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-modal-type-device',
-  templateUrl: './modal-type-device.component.html',
-  styleUrls: ['./modal-type-device.component.scss'],
+  selector: 'app-modal-info-device',
+  templateUrl: './modal-info-device.component.html',
+  styleUrls: ['./modal-info-device.component.scss'],
 })
-export class ModalTypeDeviceComponent {
+export class ModalInfoDeviceComponent {
   @Input() data;
   constructor(public modalController: ModalController) {}
   public closeModal(): void {
